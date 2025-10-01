@@ -1,0 +1,85 @@
+# Rust
+/target
+**/target/
+Cargo.lock
+**/*.rs.bk
+**/*.rs.swp
+**/*.pdb
+
+# Rust build artifacts
+*.rlib
+*.so
+*.dylib
+*.dll
+*.exe
+
+# Config files with secrets
+config.yaml
+config.*.yaml
+*.env
+.env.*
+*.secret
+*.key
+*.pem
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+db_data/
+
+# IDE and Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.vs/
+*.iml
+.project
+.classpath
+.settings/
+*.sublime-project
+*.sublime-workspace
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+*.log.*
+logs/
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.backup
+
+# Dependencies
+vendor/
+node_modules/
+
+# Documentation build
+/docs/_build
+/docs/.doctrees
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker
+.dockerignore.local
+docker-compose.override.yml
+
+# Local development
+.local/
+*.local
