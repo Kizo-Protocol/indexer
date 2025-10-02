@@ -10,6 +10,7 @@ on:
 env:
   RUST_VERSION: "stable"00
   CARGO_TERM_COLOR: always
+  SQLX_OFFLINE: true
   
 jobs:
   pre-checks:
