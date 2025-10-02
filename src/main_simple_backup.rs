@@ -75,7 +75,7 @@ fn main() -> Result<()> {
 
     // Establish database connection
     let pool = establish_connection_pool(&config.database_url)?;
-    
+
     // Run migrations
     run_migrations(&pool)?;
 

@@ -1,9 +1,10 @@
 #![allow(clippy::extra_unused_lifetimes)]
 
-use crate::schema::{bets, market_resolutions, markets, protocol_fees, winnings_claims, yield_deposits};
+use crate::schema::{
+    bets, market_resolutions, markets, protocol_fees, winnings_claims, yield_deposits,
+};
 use aptos_indexer_processor_sdk::{
-    aptos_protos::transaction::v1::Event as EventPB,
-    utils::convert::standardize_address,
+    aptos_protos::transaction::v1::Event as EventPB, utils::convert::standardize_address,
 };
 use diesel::{Identifiable, Insertable, Queryable};
 use field_count::FieldCount;
@@ -331,4 +332,3 @@ where
 {
     serde_json::from_str(event.data.as_str()).ok()
 }
-

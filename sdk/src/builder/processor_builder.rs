@@ -49,10 +49,9 @@ impl GraphBuilder {
         let mut graph = self.graph.lock().unwrap();
         let new_node_index = graph.add_node(current_node_counter);
 
-        self.node_map
-            .lock()
-            .unwrap()
-            .insert(current_node_counter, GraphNode {
+        self.node_map.lock().unwrap().insert(
+            current_node_counter,
+            GraphNode {
                 id: current_node_counter,
                 name: step.step.name(),
                 step_type: step.type_name(),
@@ -60,7 +59,8 @@ impl GraphBuilder {
                 output_type: std::any::type_name::<Output>().to_string(),
                 join_handle: None,
                 end_step: false,
-            });
+            },
+        );
 
         *self.node_counter.lock().unwrap() += 1;
         self.current_node_index = Some(new_node_index);
@@ -76,11 +76,9 @@ impl GraphBuilder {
     {
         let current_node_counter = *self.node_counter.lock().unwrap();
         let new_node_index = self.graph.lock().unwrap().add_node(current_node_counter);
-        self.node_map
-            .lock()
-            .unwrap()
-            .deref_mut()
-            .insert(current_node_counter, GraphNode {
+        self.node_map.lock().unwrap().deref_mut().insert(
+            current_node_counter,
+            GraphNode {
                 id: current_node_counter,
                 name: step.step.name(),
                 step_type: step.type_name(),
@@ -88,7 +86,8 @@ impl GraphBuilder {
                 output_type: std::any::type_name::<Output>().to_string(),
                 join_handle: None,
                 end_step: false,
-            });
+            },
+        );
 
         self.add_edge_to(new_node_index);
         *self.node_counter.lock().unwrap() += 1;
