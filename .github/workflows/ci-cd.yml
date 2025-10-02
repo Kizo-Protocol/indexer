@@ -66,7 +66,7 @@ jobs:
         run: |
           echo "[INFO] : Installing system dependencies"
           sudo apt-get update
-          sudo apt-get install -y libpq-dev pkg-config
+          sudo apt-get install -y libpq-dev pkg-config libdw-dev
 
       - name: '[INFO] : Format code'
         run: |
